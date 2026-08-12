@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Keynote Speaker &amp; Panellists | IITK Samanvay 2026</title>
+  <meta name="description"
+    content="Keynote speaker and panellists for IITK Samanvay 2026 — IIT Kanpur's Industry-Academia &amp; Innovation Summit." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!-- ?v= is a cache-buster: it must change whenever style.css / script.js / speakers.js
+       change, otherwise browsers keep serving the old file. -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <link rel="stylesheet" href="style.css?v=f90b2dcb" />
+</head>
+
+<body>
+
+  <!-- ============================= NAVBAR ============================= -->
+  <nav class="navbar navbar-expand-lg fixed-top gtu-nav">
+    <div class="container-fluid px-3 px-lg-4">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/iitk-logo.png?v=f8f34403" alt="Indian Institute of Technology Kanpur" class="brand-iitk" />
+        <span class="brand-sep"></span>
+        <img src="images/samanvay-logo-dark.png" alt="IITK Samanvay" class="brand-samanvay" />
+      </a>
+      <a href="https://zfrmz.in/ZJT3FvDksp4wmgIFJTu9" target="_blank" rel="noopener noreferrer" class="nav-cta-mobile d-lg-none">
+        <i class="bi bi-pencil-square"></i> Register
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-label="Toggle navigation">
+        <i class="bi bi-list fs-3" style="color:#421E18"></i>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="panellist.html">Speakers</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#panels">Panels</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0 d-none d-lg-block">
+            <a href="https://zfrmz.in/ZJT3FvDksp4wmgIFJTu9" target="_blank" rel="noopener noreferrer"
+              class="btn-gtu btn-sm-gtu w-100">Register Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================= BANNER ============================= -->
+  <section class="inner-banner">
+    <div class="ib-inner container-gtu">
+      <span class="eyebrow eyebrow-light">IITK Samanvay 2026</span>
+      <h1>Keynote Speaker &amp; <strong>Panellists</strong></h1>
+    </div>
+  </section>
+
+  <!-- ============================= KEYNOTE ============================= -->
+  <section class="sec sec-champagne" id="keynote">
+    <div class="container-gtu">
+      <div class="text-center mb-5" data-aos="fade-up">
+        <span class="eyebrow">Keynote Address</span>
+        <h2 class="section-title">Keynote <strong>Speaker</strong></h2>
+        <div class="rule rule-center"></div>
+      </div>
+      <div class="feature-card" data-aos="fade-up" id="keynoteContainer"></div>
+    </div>
+  </section>
+
+  <!-- ============================= PANELLISTS ============================= -->
+  <section class="sec" id="panellists">
+    <div class="container-gtu">
+      <div class="text-center mb-4" data-aos="fade-up">
+        <span class="eyebrow">The Line-Up</span>
+        <h2 class="section-title">Meet the <strong>Panellists</strong></h2>
+        <div class="rule rule-center"></div>
+        <p class="mx-auto" style="max-width:760px">A distinguished line-up of industry leaders, policymakers,
+          researchers and innovators shaping conversations on India's innovation landscape.</p>
+      </div>
+
+      <div class="panel-tabs mb-2" data-aos="fade-up">
+        <button class="tab is-active" data-panel-filter="all">All</button>
+        <button class="tab" data-panel-filter="Panel 1">Panel 1</button>
+        <button class="tab" data-panel-filter="Panel 2">Panel 2</button>
+        <button class="tab" data-panel-filter="Panel 3">Panel 3</button>
+      </div>
+
+      <div id="panelistContainer"></div>
+    </div>
+  </section>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="gtu-footer">
+    <div class="container-gtu">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <img src="images/iitk-logo-white.png?v=0d77f109" alt="Indian Institute of Technology Kanpur" class="f-logo">
+          <p>IIT Kanpur's flagship Industry-Academia &amp; Innovation Summit — advancing research partnerships,
+            technology commercialisation and national impact.</p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Explore</h5>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="panellist.html">Speakers</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#panels">Panels</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#venue">Venue</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <h5>Archive</h5>
+          <ul>
+            <!-- TODO: confirm final 2025 report &amp; gallery URLs -->
+            <li><a href="index.html#report">Samanvay 2025 Report</a></li>
+            <li><a href="https://iitk.ac.in/dora/iitk-samanvay-2025/" target="_blank"
+                rel="noopener noreferrer">Samanvay 2025 Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <h5>Register</h5>
+          <p class="mb-3">15 October 2026 · Bharat Mandapam, New Delhi</p>
+          <a href="https://zfrmz.in/ZJT3FvDksp4wmgIFJTu9" target="_blank" rel="noopener noreferrer"
+            class="btn-gtu btn-sm-gtu">Register Now</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+        <span>&copy; 2026 Indian Institute of Technology Kanpur. All rights reserved.</span>
+        <span>Office of Dean of Resources &amp; Alumni</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="speakers.js?v=929f7d44"></script>
+  <script src="script.js?v=038ee86b"></script>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ---------- keynote block ---------- */
+      function renderKeynote() {
+        var k = SAMANVAY.keynote;
+        var media = k.image
+          ? '<div class="feature-media"><img src="' + k.image + '" alt="' + k.name + '"></div>'
+          : '<div class="feature-media"><div class="placeholder-box">' +
+            '<span class="ph-ico"><i class="bi bi-mic"></i></span>' +
+            '<p class="ph-txt">Keynote Speaker Banner Placeholder</p></div></div>';
+
+        document.getElementById('keynoteContainer').innerHTML =
+          '<div class="row g-4 g-lg-5 align-items-center flex-lg-row-reverse">' +
+            '<div class="col-lg-5">' + media + '</div>' +
+            '<div class="col-lg-7">' +
+              '<h3 class="feature-name">' + k.name + '</h3>' +
+              '<p class="feature-desig">' + (k.designation || '') + '</p>' +
+              '<p class="feature-org">' + (k.organization || '') + '</p>' +
+              '<p class="feature-bio">' + (k.bio || '') + '</p>' +
+            '</div>' +
+          '</div>';
+      }
+
+      /* ---------- panellist groups ---------- */
+      function renderPanellists(list) {
+        var container = document.getElementById('panelistContainer');
+        container.innerHTML = '';
+
+        var grouped = {};
+        list.forEach(function (p) {
+          var key = p.panel || 'Speakers';
+          (grouped[key] = grouped[key] || []).push(p);
+        });
+
+        Object.keys(grouped).sort().forEach(function (panel) {
+          var slug = panel.toLowerCase().replace(/\s+/g, '-');
+
+          var head = document.createElement('div');
+          head.className = 'panel-chip';
+          head.id = slug;
+          head.innerHTML =
+            '<span class="pc-name">' + panel + '</span>' +
+            '<div class="pc-sub">' + (SAMANVAY.panelTitles[panel] || '') + '</div>';
+          container.appendChild(head);
+
+          var grid = document.createElement('div');
+          grid.className = 'speaker-grid';
+          grid.innerHTML = grouped[panel].map(samanvaySpeakerCard).join('');
+          container.appendChild(grid);
+        });
+      }
+
+      /* ---------- tab filter ---------- */
+      function initTabs() {
+        var tabs = document.querySelectorAll('[data-panel-filter]');
+
+        tabs.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var key = btn.getAttribute('data-panel-filter');
+            tabs.forEach(function (b) { b.classList.remove('is-active'); });
+            btn.classList.add('is-active');
+
+            renderPanellists(
+              key === 'all'
+                ? SAMANVAY.panellists
+                : SAMANVAY.panellists.filter(function (p) { return p.panel === key; })
+            );
+          });
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        renderKeynote();
+        renderPanellists(SAMANVAY.panellists);
+        if (typeof AOS !== 'undefined') AOS.refresh();
+        initTabs();
+
+        // deep link support: panellist.html#panel-2
+        if (location.hash) {
+          var el = document.querySelector(location.hash);
+          if (el) window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' });
+        }
+      });
+    })();
+  </script>
+</body>
+
+</html>
