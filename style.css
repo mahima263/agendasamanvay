@@ -1173,6 +1173,14 @@ a { text-decoration: none; }
 
 .venue-slider { position: absolute; inset: 0; }
 
+.venue-single { position: absolute; inset: 0; }
+.venue-single picture { display: contents; }
+.venue-single img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+
 .venue-slider picture { display: contents; }
 
 .venue-slider img {
@@ -1355,22 +1363,21 @@ a { text-decoration: none; }
 
 .pc-list { list-style: none; padding: 0; margin: 0 0 26px; }
 
+.pc-list { display: grid; gap: 12px; }
 .pc-list li {
   display: flex;
-  align-items: baseline;
-  gap: 16px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
 }
-.pc-list li:last-child { border-bottom: 1px solid var(--line); }
 
 .pc-key {
-  flex: 0 0 68px;
-  font-size: .7rem;
+  font-size: .66rem;
   letter-spacing: .18em;
   text-transform: uppercase;
   font-weight: 900;
   color: var(--grey-olive);
+  margin-bottom: 2px;
 }
 
 .pc-val {
@@ -1385,19 +1392,16 @@ a { text-decoration: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  width: 100%;
-  height: 50px;
-  border-radius: 999px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
   background: #25D366;
   color: #fff;
-  font-size: .76rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
+  font-size: 1.35rem;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, .3);
   transition: background-color .25s ease, transform .2s ease;
 }
-.pc-wa:hover { background: #1EA952; color: #fff; transform: translateY(-2px); }
+.pc-wa:hover { background: #1EA952; color: #fff; transform: translateY(-3px); }
 
 @media (max-width: 991.98px) {
   .person-card { padding: 34px 26px 30px; }
@@ -1406,8 +1410,6 @@ a { text-decoration: none; }
 
 @media (max-width: 767.98px) {
   .contact-people { grid-template-columns: 1fr; gap: 20px; }
-  .pc-list li { flex-direction: column; gap: 4px; }
-  .pc-key { flex: none; }
 }
 
 .contact-office {
@@ -1634,201 +1636,6 @@ a { text-decoration: none; }
 
 
 
-/* always-visible Register + Agenda floating pills, stacked above the chat FAB */
-.fd-quick {
-  order: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-end;
-  margin-bottom: 10px;
-}
-
-.fd-quick-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 999px;
-  font-size: .68rem;
-  font-weight: 900;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  box-shadow: 0 10px 24px rgba(66, 30, 24, .3);
-  transition: transform .2s ease, background-color .25s ease, color .25s ease;
-}
-.fd-quick-btn i { font-size: .95rem; }
-.fd-quick-btn:hover { transform: translateY(-2px); }
-
-.fd-quick-btn.is-register { background: var(--reddish-brown); color: #fff; }
-.fd-quick-btn.is-register:hover { background: var(--mahogany); color: #fff; }
-
-.fd-quick-btn.is-agenda { background: var(--gold); color: var(--mahogany); }
-.fd-quick-btn.is-agenda:hover { background: var(--reddish-brown); color: #fff; }
-
-@media (max-width: 575.98px) {
-  .float-dock { right: 14px; bottom: 14px; gap: 10px; }
-  .fd-fab { width: 52px; height: 52px; font-size: 1.3rem; }
-  .fd-panel { width: calc(100vw - 28px); max-width: 320px; }
-  .fd-quick { gap: 8px; margin-bottom: 8px; }
-  .fd-quick-btn { height: 38px; padding: 0 14px; font-size: .64rem; }
-  .fd-quick-btn i { font-size: .9rem; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fd-fab::after { animation: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .glance-card::after { animation: none; }
-  .venue-slider img { transition: opacity .2s linear; }
-}
-
-
-/* ---------- Bharat Mandapam auto-scrolling strip ---------- */
-.venue-marquee {
-  background: var(--mahogany);
-  padding: 22px 0;
-  overflow: hidden;
-  position: relative;
-}
-
-.venue-marquee::before,
-.venue-marquee::after {
-  content: "";
-  position: absolute;
-  top: 0; bottom: 0;
-  width: 120px;
-  z-index: 2;
-  pointer-events: none;
-}
-.venue-marquee::before { left: 0; background: linear-gradient(90deg, var(--mahogany), transparent); }
-.venue-marquee::after { right: 0; background: linear-gradient(270deg, var(--mahogany), transparent); }
-
-.vm-track {
-  display: flex;
-  gap: 18px;
-  width: max-content;
-  animation: vmScroll 38s linear infinite;
-}
-
-.venue-marquee:hover .vm-track { animation-play-state: paused; }
-
-.vm-item {
-  flex: 0 0 auto;
-  width: 420px;
-  height: 250px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 14px 30px rgba(0, 0, 0, .3);
-}
-
-.vm-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-@keyframes vmScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(calc(-50% - 9px)); }
-}
-
-@media (max-width: 767.98px) {
-  .vm-item { width: 280px; height: 180px; }
-  .venue-marquee::before, .venue-marquee::after { width: 60px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .vm-track { animation: none; }
-}
-
-/* the band CTA stays pill-sized on phones (overrides the full-width button rule) */
-@media (max-width: 575.98px) {
-  .pb-cta { width: auto; padding: 0 26px; height: 48px; font-size: .74rem; }
-}
-
-/* =========================================================
-   MOBILE — keep Register Now permanently in view
-   ========================================================= */
-
-.nav-cta-mobile {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  margin-left: auto;
-  margin-right: 10px;
-  height: 40px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: var(--reddish-brown);
-  color: #fff;
-  font-size: .72rem;
-  font-weight: 900;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  box-shadow: 0 6px 16px rgba(171, 69, 49, .34);
-  transition: transform .2s ease, background-color .25s ease;
-  /* a few gentle pulses on load, then it settles down */
-  animation: ctaPulse 2.2s ease-out 3;
-}
-
-.nav-cta-mobile:active { transform: scale(.96); background: var(--mahogany); }
-.nav-cta-mobile:hover { color: #fff; }
-.nav-cta-mobile i { font-size: .9rem; }
-
-@keyframes ctaPulse {
-  0%   { box-shadow: 0 6px 16px rgba(171, 69, 49, .34), 0 0 0 0 rgba(171, 69, 49, .5); }
-  70%  { box-shadow: 0 6px 16px rgba(171, 69, 49, .34), 0 0 0 12px rgba(171, 69, 49, 0); }
-  100% { box-shadow: 0 6px 16px rgba(171, 69, 49, .34), 0 0 0 0 rgba(171, 69, 49, 0); }
-}
-
-@media (max-width: 359.98px) {
-  .nav-cta-mobile { padding: 0 13px; font-size: .66rem; }
-  .nav-cta-mobile i { display: none; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nav-cta-mobile { animation: none; }
-}
-
-/* ---------- mobile polish ---------- */
-@media (max-width: 767.98px) {
-  .gtu-nav .navbar-brand img { height: 34px; }
-  .gtu-nav .navbar-toggler { padding: 4px 8px; }
-
-  .section-title { font-size: clamp(1.65rem, 7vw, 2.1rem); }
-  .lede-wide { font-size: .96rem; }
-
-  /* the dock must never sit on top of a button */
-  .float-dock { bottom: 16px; right: 12px; }
-
-  .panel-title { font-size: 1.22rem; }
-  .venue-title { font-size: clamp(1.75rem, 8vw, 2.3rem); }
-  .vc-body p { font-size: .98rem; line-height: 1.75; }
-  .report-sec p { max-width: none; }
-  .cd-foot { font-size: .7rem; letter-spacing: .16em; }
-}
-
-/* comfortable tap targets on touch screens */
-@media (max-width: 991.98px) {
-  .gtu-nav .navbar-toggler { min-width: 44px; min-height: 44px; }
-
-  /* dots stay small; an invisible overlay gives them a finger-sized hit area */
-  .venue-dots { gap: 14px; bottom: 16px; }
-  .venue-dots button { position: relative; }
-  .venue-dots button::after {
-    content: "";
-    position: absolute;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: 44px; height: 44px;
-  }
-
-  .gtu-footer ul li { margin-bottom: 4px; }
-  .gtu-footer ul li a { display: inline-block; padding: 8px 0; }
-  .panel-link, .panel-cta { padding: 6px 0; }
-}
-
 /* footer social icons */
 .footer-social { display: flex; gap: 12px; margin-top: 20px; }
 .footer-social a {
@@ -1842,3 +1649,131 @@ a { text-decoration: none; }
   transition: background-color .25s ease, color .25s ease, transform .2s ease;
 }
 .footer-social a:hover { background: var(--gold); color: var(--mahogany); transform: translateY(-3px); }
+
+/* agenda floating pill (mobile) */
+.fd-agenda-btn {
+  order: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--mahogany);
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(66, 30, 24, .3);
+  margin-bottom: 12px;
+  transition: transform .2s ease, background-color .25s ease;
+}
+.fd-agenda-btn:hover { background: var(--reddish-brown); color: #fff; transform: translateY(-2px); }
+
+@media (max-width: 575.98px) {
+  .fd-agenda-btn { height: 40px; padding: 0 15px; font-size: .66rem; }
+}
+
+/* ============================= STICKY REGISTER BAR ============================= */
+.register-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 1400;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--reddish-brown), #93341F);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 900;
+  letter-spacing: .06em;
+  box-shadow: 0 -8px 30px rgba(66, 30, 24, .28);
+  transition: background-color .25s ease;
+}
+.register-bar:hover { background: linear-gradient(135deg, #93341F, var(--mahogany)); color: #fff; }
+.register-bar i { font-size: 1.2rem; }
+
+@media (max-width: 991.98px) {
+  .register-bar { display: flex; }
+  .float-dock { bottom: 80px !important; }
+  .gtu-footer { padding-bottom: 84px; }
+}
+
+@media (max-width: 575.98px) {
+  .register-bar { height: 58px; font-size: 1rem; }
+  .float-dock { bottom: 72px !important; }
+}
+
+
+/* agenda CTA button inside the Glance section */
+.glance-agenda-btn {
+  margin-top: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ============================= CONTACT CARDS (refined) ============================= */
+.pc-head { display: flex; align-items: center; gap: 16px; margin-bottom: 26px; }
+.pc-avatar {
+  flex: 0 0 56px; width: 56px; height: 56px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--reddish-brown), var(--gold));
+  color: #fff; font-size: 1.15rem; font-weight: 900; letter-spacing: .04em;
+  box-shadow: 0 8px 20px rgba(171, 69, 49, .28);
+}
+.pc-ico {
+  flex: 0 0 42px; width: 42px; height: 42px;
+  border-radius: 12px;
+  display: grid; place-items: center;
+  background: rgba(171, 69, 49, .1);
+  color: var(--reddish-brown); font-size: 1.05rem;
+}
+.pc-lines { display: flex; flex-direction: column; }
+
+
+/* ============================= CONTACT CARDS (screenshot style) ============================= */
+.person-card {
+  position: relative;
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 40px 40px 36px;
+  box-shadow: 0 20px 50px rgba(66, 30, 24, .1);
+  transition: transform .3s ease, box-shadow .3s ease;
+  overflow: hidden;
+}
+.person-card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; bottom: 0; width: 5px;
+  background: linear-gradient(180deg, var(--reddish-brown), var(--gold));
+}
+.person-card:hover { transform: translateY(-6px); box-shadow: 0 30px 66px rgba(66, 30, 24, .16); }
+
+.pc-name { font-size: 1.5rem; font-weight: 900; color: var(--mahogany); margin: 0 0 8px; }
+.pc-sub { font-size: 1rem; color: var(--muted); margin: 0 0 26px; }
+
+.pc-actions { display: flex; gap: 14px; }
+.pc-btn {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 1.25rem;
+  transition: transform .2s ease, filter .2s ease;
+}
+.pc-btn:hover { transform: translateY(-3px); filter: brightness(1.05); }
+.pc-btn.is-wa { background: #25D366; color: #fff; box-shadow: 0 8px 18px rgba(37, 211, 102, .3); }
+.pc-btn.is-phone { background: var(--champagne); color: var(--reddish-brown); }
+.pc-btn.is-mail { background: var(--champagne); color: var(--reddish-brown); }
+
+@media (max-width: 991.98px) {
+  .person-card { padding: 32px 28px 28px; }
+  .pc-name { font-size: 1.32rem; }
+}
+@media (max-width: 767.98px) {
+  .contact-people { grid-template-columns: 1fr; gap: 20px; }
+}
